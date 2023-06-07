@@ -27,8 +27,6 @@ function App() {
   };
 
   const handleSearch = (query: string) => {
-    setSearchQuery(query);
-
     const filteredArtworks = artworks.filter((artwork) => {
       const nameMatch = artwork.name
         .toLowerCase()
@@ -37,10 +35,9 @@ function App() {
       return nameMatch || yearMatch;
     });
 
+    searchQuery
+    setSearchQuery(query);
     setSearchResults(filteredArtworks);
-  };
-  const handleBuyTicket = () => {
-    setShowTicketForm(true);
   };
 
   const handleCloseTicketForm = () => {
