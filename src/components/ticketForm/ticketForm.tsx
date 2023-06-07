@@ -62,7 +62,7 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
         </button>
         {!submitted && (
           <form onSubmit={handleSubmit}>
-            <h2>Buy Ticket</h2>
+            <h4>Buy Your Way to See The Finest Art on Earth!</h4>
             <div className="form-group">
               <label>Name:</label>
               <input type="text" value={name} onChange={handleNameChange} />
@@ -71,7 +71,8 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
               )}
             </div>
             <div className="form-group">
-              <label>Ticket Price: €4 </label>
+              <label>Date:</label>
+              <input type="date" value={date} onChange={handleDateChange} />
             </div>
             <div className="form-group">
               <label>Quantity:</label>
@@ -88,10 +89,6 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
                   You must select a quantity greater than 0.
                 </p>
               )}
-            </div>
-            <div className="form-group">
-              <label>Date:</label>
-              <input type="date" value={date} onChange={handleDateChange} />
             </div>
             <div>
               <p className="total-price">Total Price: €{totalPrice}</p>
