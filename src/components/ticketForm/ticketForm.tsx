@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ticketForm.css"
+import "./ticketForm.css";
 
 type TicketFormProps = {
   onClose: () => void;
@@ -12,6 +12,7 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
   const [nameError, setNameError] = useState(false);
   const [quantityError, setQuantityError] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,8 +40,10 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
     setName(event.target.value);
   };
 
-  const handleQuantityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setQuantity(Number(event.target.value));
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedQuantity = parseInt(e.target.value);
+    setQuantity(selectedQuantity);
+    setTotalPrice(selectedQuantity * 2);
   };
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,10 +66,12 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
             <div className="form-group">
               <label>Name:</label>
               <input type="text" value={name} onChange={handleNameChange} />
-              {nameError && <p className="error-text">You must fill in your name.</p>}
+              {nameError && (
+                <p className="error-text">You must fill in your name.</p>
+              )}
             </div>
             <div className="form-group">
-              <label>Price: €4 </label>
+              <label>Ticket Price: €4 </label>
             </div>
             <div className="form-group">
               <label>Quantity:</label>
@@ -78,11 +83,18 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
                 <option value={4}>4</option>
                 <option value={5}>5</option>
               </select>
-              {quantityError && <p className="error-text">You must select a quantity greater than 0.</p>}
+              {quantityError && (
+                <p className="error-text">
+                  You must select a quantity greater than 0.
+                </p>
+              )}
             </div>
             <div className="form-group">
               <label>Date:</label>
               <input type="date" value={date} onChange={handleDateChange} />
+            </div>
+            <div>
+              <p className="total-price">Total Price: €{totalPrice}</p>
             </div>
             <button type="submit">Buy Now</button>
           </form>
