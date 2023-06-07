@@ -5,7 +5,7 @@
 
   { "id": 3, "name": "The Starry Night", "year": 1889, "isLike": false, "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/525px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" },
 
-  { "id": 4, "name": "Wheatfield with Crows", "year": 1890, "isLike": false,  "imgSrc": "https://en.wikipedia.org/wiki/File:Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg" },
+  { "id": 4, "name": "Wheatfield with Crows", "year": 1890, "isLike": false,  "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg/450px-Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg" },
 
   { "id": 5, "name": "Sorrowing Old Man", "year": 1890, "isLike": false,  "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Van_Gogh_-_Trauernder_alter_Mann.jpeg/405px-Van_Gogh_-_Trauernder_alter_Mann.jpeg" },
 
@@ -31,7 +31,7 @@
 
   { "id": 16, "name": "Almond Blossom", "year": 1890, "isLike": false, "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg/270px-Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg" },
 
-  { "id": 17, "name": "The Pink Orchard", "year": 1888, "isLike": false, "imgSrc": "https://en.wikipedia.org/wiki/File:Vincent_van_Gogh_-_De_roze_boomgaard_-_Google_Art_Project.jpg" },
+  { "id": 17, "name": "The Pink Orchard", "year": 1888, "isLike": false, "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_De_roze_boomgaard_-_Google_Art_Project.jpg/270px-Vincent_van_Gogh_-_De_roze_boomgaard_-_Google_Art_Project.jpg" },
 
   { "id": 18, "name": "Wheatfield Under ThunderCloud", "year": 1890, "isLike": false, "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vincent_van_Gogh_-_Wheatfield_under_thunderclouds_-_Google_Art_Project.jpg/465px-Vincent_van_Gogh_-_Wheatfield_under_thunderclouds_-_Google_Art_Project.jpg" },
 
