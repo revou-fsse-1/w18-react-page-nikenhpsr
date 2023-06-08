@@ -18,7 +18,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={searchQuery} onChange={handleChange} placeholder="Find your favorite Van Gogh's Pieces" />
+      <input type="text" className="text-center mb-4 w-96 p-2 border border-gray-600 rounded" value={searchQuery} onChange={handleChange} placeholder="Find your favorite Van Gogh's Pieces" />
     </form>
   );
 };

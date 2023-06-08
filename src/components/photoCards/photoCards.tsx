@@ -18,14 +18,24 @@ const Photocard = (artwork: PhotoCardProps) => {
   };
 
   return (
-    <>
-      <div className="photocard">
-        <img src={artwork.imgSrc} alt="" />
-        <h4>{artwork.name}</h4>
-        <p>{artwork.year}</p>
-        <LikeButton initialValue={isLike} onLikeChange={handleLikeChange} />
+    <div className="photocard bg-white p-4 shadow-md flex flex-col transform-gpu transition-transform duration-200 hover:scale-105">
+      <div className="relative flex-grow">
+        <img
+          src={artwork.imgSrc}
+          alt=""
+          className="object-cover w-full h-full"
+        />
+        <div className="absolute top-0 right-0 p-2">
+          <LikeButton
+            initialValue={isLike}
+            onLikeChange={handleLikeChange}
+            //className="absolute top-2 right-2 z-10"
+          />
+        </div>
       </div>
-    </>
+      <h4 className="mt-2 text-xl font-semibold">{artwork.name}</h4>
+      <p className="mt-1 text-gray-500">{artwork.year}</p>
+    </div>
   );
 };
 

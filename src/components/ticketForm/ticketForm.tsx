@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./ticketForm.css";
 
 type TicketFormProps = {
   onClose: () => void;
@@ -43,7 +42,7 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
   const handleQuantityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedQuantity = parseInt(e.target.value);
     setQuantity(selectedQuantity);
-    setTotalPrice(selectedQuantity * 2);
+    setTotalPrice(selectedQuantity * 3.75);
   };
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,28 +54,28 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="ticket-form-overlay">
-      <div className="ticket-form-container">
+    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-4 rounded-lg">
         <button className="close-button" onClick={handleClose}>
           X
         </button>
         {!submitted && (
           <form onSubmit={handleSubmit}>
-            <h4>Buy Your Way to See The Finest Art on Earth!</h4>
-            <div className="form-group">
-              <label>Name:</label>
-              <input type="text" value={name} onChange={handleNameChange} />
+            <h4 className="mb-4 font-bold">Buy Your Way to See The Finest Art on Earth!</h4>
+            <div className="mb-4">
+              <label className="block">Name:</label>
+              <input type="text" value={name} onChange={handleNameChange} className="w-full text-center border border-gray-600 rounded" />
               {nameError && (
-                <p className="error-text">You must fill in your name.</p>
+                <p className="text-red-500 mt-0 mb-0">You must fill in your name.</p>
               )}
             </div>
-            <div className="form-group">
-              <label>Date:</label>
-              <input type="date" value={date} onChange={handleDateChange} />
+            <div className="mb-4">
+              <label className="block">Date:</label>
+              <input type="date" value={date} onChange={handleDateChange} className="w-full text-center border border-gray-600 rounded" />
             </div>
-            <div className="form-group">
-              <label>Quantity:</label>
-              <select value={quantity} onChange={handleQuantityChange}>
+            <div className="mb-4">
+              <label className="block">Quantity:</label>
+              <select value={quantity} onChange={handleQuantityChange} className="w-full text-center border border-gray-600 rounded">
                 <option value={0}>0</option>
                 <option value={1}>1</option>
                 <option value={2}>2</option>
@@ -85,20 +84,20 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
                 <option value={5}>5</option>
               </select>
               {quantityError && (
-                <p className="error-text">
+                <p className="text-red-500 mt-0 mb-0">
                   You must select a quantity greater than 0.
                 </p>
               )}
             </div>
             <div>
-              <p className="total-price">Total Price: €{totalPrice}</p>
+              <p className="font-bold">Total Price: €{totalPrice}</p>
             </div>
-            <button type="submit">Buy Now</button>
+            <button type="submit" className="mt-4 border border-gray-600 rounded">Buy Now</button>
           </form>
         )}
         {submitted && (
-          <div className="success-message">
-            <h2>Congratulations!</h2>
+          <div className="text-center">
+            <h2 className="mb-4 font-bold">Congratulations!</h2>
             <p>Your ticket has been successfully bought.</p>
           </div>
         )}
