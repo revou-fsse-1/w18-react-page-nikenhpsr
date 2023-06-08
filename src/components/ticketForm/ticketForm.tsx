@@ -61,7 +61,7 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
         </button>
         {!submitted && (
           <form onSubmit={handleSubmit}>
-            <h4 className="mb-4 font-bold">Buy Your Way to See The Finest Art on Earth!</h4>
+            <h4 className="mb-4 font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">Buy Your Way to See The Finest Art on Earth!</h4>
             <div className="mb-4">
               <label className="block">Name:</label>
               <input type="text" value={name} onChange={handleNameChange} className="w-full text-center border border-gray-600 rounded" />
@@ -97,7 +97,7 @@ const TicketForm: React.FC<TicketFormProps> = ({ onClose }) => {
         )}
         {submitted && (
           <div className="text-center">
-            <h2 className="mb-4 font-bold">Congratulations!</h2>
+            <h2 className="mb-4 font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">Congratulations!</h2>
             <p>Your ticket has been successfully bought.</p>
           </div>
         )}

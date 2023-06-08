@@ -45,12 +45,12 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Van Gogh Art Gallery</h2>
+    <div className="container mx-auto p-4 lg:max-w-4xl xl:max-w-5xl">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">Van Gogh Art Gallery</h2>
       <p className="mb-4">You have liked {likeCount} picture(s).</p>
-        <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} />
 
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
         {searchResults.map((artwork) => (
           <Photocard
             key={artwork.name}
@@ -64,7 +64,7 @@ function App() {
       </div>
 
       <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded text-base md:text-lg lg:text-xl xl:text-2xl"
         onClick={handleOpenForm}
       >
         Buy Ticket
